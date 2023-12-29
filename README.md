@@ -1,1 +1,5 @@
-<video controls width="250"> <source type="video/mp4" src="./readme/example-tv-girl-not-aroundmp4.mp4"/> </video>
+# musicUI by bimoware
+## 😘 Enable video volume for better experience
+
+https://github.com/bimoware/musicUI/assets/71925280/7ac4f0bb-7cbc-4aa3-857c-e9242655f1cf
+
