@@ -1,5 +1,5 @@
 let id = 0;
-// who,id,ss:mm,Text
+
 let prsn1 = [
   "0:33",
   "2:07",
