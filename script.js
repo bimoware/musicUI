@@ -50,6 +50,10 @@ let prsn3 = [
   "43:16|Rubbed and severed by the heat",
   "45:38|And you don't know how long I could stare into your picture",
   "50:03|And wish that it was me",
+  "52:13|I guess it's different 'cause you love him",
+  "55:00|But I've got an interactive",
+  "57:12|Sick and twisted imagination",
+  "59:57|And that's gotta count for something"
 ].map((e) => `3|${++id}|${e}`);
 
 let profiles = [...prsn1, ...prsn2, ...prsn3];

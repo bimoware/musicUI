@@ -28,8 +28,8 @@ We wanna talk about sex but we're not allowed
 Well, you may not like it but you'd better learn how
 'Cause it's your turn now
 You're wasting your tongue with lame excuses and lies
-# Boy
 Get your face between my thighs
+# Boy
 I dreamt I was standing in your doorstep
 Licking sweat off of your forehead
 With your finger in my mouth
