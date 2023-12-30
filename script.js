@@ -39,19 +39,18 @@ let prsn2 = [
 ].map((e) => `2|${++id}|${e}`);
 
 let prsn3 = [
-    "20:42|So how should I begin this?",
-    "22:50|I guess it started when you were with him",
-    "25:37|And how he never even took you out to dance",
-    "29:09|But did he fuck with any rhythm?",
-    "32:04|But now he's playing with your head",
-    "34:34|But did he ever make you cum?",
-    "37:16|Did he ever make you cry?",
-    "39:45|Do the wires in your mind get sewn together",
-    "43:16|Rubbed and severed by the heat",
-    "45:38|And you don't know how long I could stare into your picture",
-    "50:03|And wish that it was me"
-  ].map((e) => `3|${++id}|${e}`);
-
+  "20:42|So how should I begin this?",
+  "22:50|I guess it started when you were with him",
+  "25:37|And how he never even took you out to dance",
+  "29:09|But did he fuck with any rhythm?",
+  "32:04|But now he's playing with your head",
+  "34:34|But did he ever make you cum?",
+  "37:16|Did he ever make you cry?",
+  "39:45|Do the wires in your mind get sewn together",
+  "43:16|Rubbed and severed by the heat",
+  "45:38|And you don't know how long I could stare into your picture",
+  "50:03|And wish that it was me",
+].map((e) => `3|${++id}|${e}`);
 
 let profiles = [...prsn1, ...prsn2, ...prsn3];
 
