@@ -52,6 +52,22 @@ let groups = [
     "55:00|But I've got an interactive",
     "57:12|Sick and twisted imagination",
     "59:57|And that's gotta count for something",
+    // --
+    "1:21:11|I dreamt I was standing in your doorstep",
+    "1:23:33|Licking sweat off of your forehead",
+    "1:26:38|With your finger in my mouth",
+    "1:29:00|And the sound when leather jackets hit the ground",
+    "1:32:47|You should hear when you're not around",
+    "1:35:38|When it's just us horny poets",
+    "1:37:49|Who can't wait to write it down",
+    "1:40:18|Swear we were only being being honest",
+    "1:43:18|Do you like these little sonnets?",
+    "1:45:42|'Cause I wrote them just for you",
+    "1:48:14|How quickly they turn sour",
+    "1:50:51|So be careful who you screw",
+    "1:54:18|And never call",
+    "1:57:12|And I'm starting to suspect",
+    "1:59:12|You don't intend to do anything you say at all",
   ].map((e) => `3|${e}`),
 ].map((e) =>
   e.map((e) => {
@@ -62,18 +78,21 @@ let groups = [
 
 
 groups.push(copy(groups[0], "61:23"))
-// groups.push(copy(groups[1].slice(1, -1), "63:49"));
+groups.push(copy(groups[1].slice(1, -1), "63:49"));
 
 function copy(section, start) {
   let new_section = JSON.parse(JSON.stringify(section)); // deep copy array
   return new_section.map((l) => {
     l[1] = ++id;
     l[2] = l[2] - section[0][2] + fromCapcutToMs(start);
-    l[3] = l[3] + " (repeat)";
+    l[3] = l[3] + " (copy)";
     return l;
   });
 }
 function fromCapcutToMs(e) {
-  let [s, capcutms] = e.split(":").map(Number);
-  return Math.trunc(s * 1000 + (capcutms / 60) * 1000);
+  let capcutTime = e.split(":").map(Number);
+  let ms = capcutTime.pop() / 60 * 1000 || 0
+  let s = capcutTime.pop() * 1000  || 0
+  let m = capcutTime.pop() * 1000 * 60 || 0
+  return Math.trunc(m + s + ms);
 }
