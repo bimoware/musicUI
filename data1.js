@@ -26,4 +26,11 @@ let prsn1 = [
   "16:42",
   "17:10",
   "17:38",
-].map((time, i) => `1|${++id}|${time}|Hey ${i + 1}`);
+]
+
+prsn1_2 = prsn1.map((e) =>{
+  
+})
+
+prsn1_2 = prsn1_2.map((time, i) => `1|${++id}|${time}|Hey ${i + 1}`);
+console.log(prsn1_2)
