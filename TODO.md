@@ -1,0 +1,8 @@
+- [ ] Make all lyrics a json/csv file
+- [ ] Use more css cuz this is ugly for now
+- [ ] Use the real audio (this is a random youtube slowed version)
+- [ ] Google font flavicon
+- [ ] Dynamically use the song's chorus dynamically again instead of manually retyping it
+- [ ] Make the project accept any audio
+    - [ ] Make TV - Girl only one of many possible infinite tracks instead of the main
+    - [ ]

@@ -80,7 +80,7 @@ profiles = profiles.map((t, i) => {
 });
 
 console.log(profiles);
-
+ /* {} */
 document.getElementById("audioelem").onplay = function () {
   for (let lyric of profiles) {
     setTimeout(() => {
