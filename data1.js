@@ -69,16 +69,29 @@ let groups = [
     "1:57:12|And I'm starting to suspect",
     "1:59:12|You don't intend to do anything you say at all",
   ].map((e) => `3|${e}`),
-].map((e) =>
-  e.map((e) => {
-    let row = e.split("|");
-    return [Number(row[0]), ++id, fromCapcutToMs(row[1]), row[2]];
-  })
-);
+  [
+    "2:22:42|All by yourself, sittin' alone",
+    "2:25:19|I hope we're still friends, yeah, I hope you don't mind",
+  ].map((e) => `2|${e}`),
+].map((e) => e.map(fixRow));
 
-
-groups.push(copy(groups[0], "61:23"))
+groups.push([
+  fixRow("1|1:02:27|Hey (0)"),
+  ...copy(groups[0], "1:02:13"),
+  ...copy(groups[0].slice(10, 14), "1:19:35"),
+]);
 groups.push(copy(groups[1].slice(1, -1), "63:49"));
+groups.push(copy(groups[1].slice(1), "2:04:38"));
+
+for (let i = 0; i < 7; i++) {
+  groups.push(
+    copy(
+      groups[3],
+      fromCapcutToMs("2:25:19") +
+        (i+1) * (fromCapcutToMs("2:25:46") - fromCapcutToMs("2:22:39"))
+    )
+  );
+}
 
 function copy(section, start) {
   let new_section = JSON.parse(JSON.stringify(section)); // deep copy array
@@ -90,9 +103,14 @@ function copy(section, start) {
   });
 }
 function fromCapcutToMs(e) {
+  if (typeof e === "number") return e;
   let capcutTime = e.split(":").map(Number);
-  let ms = capcutTime.pop() / 60 * 1000 || 0
-  let s = capcutTime.pop() * 1000  || 0
-  let m = capcutTime.pop() * 1000 * 60 || 0
+  let ms = (capcutTime.pop() / 60) * 1000 || 0;
+  let s = capcutTime.pop() * 1000 || 0;
+  let m = capcutTime.pop() * 1000 * 60 || 0;
   return Math.trunc(m + s + ms);
+}
+function fixRow(e) {
+  let row = e.split("|");
+  return [Number(row[0]), ++id, fromCapcutToMs(row[1]), row[2]];
 }
