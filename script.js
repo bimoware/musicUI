@@ -1,29 +1,28 @@
 
+// console.log(groups);
 
-profiles = profiles.map((t) => {
-  let rows = t.split("|");
+groups = groups.map(grp => grp.map((row) => {
   return {
-    who: Number(rows[0]),
-    id: Number(rows[1]),
-    time:
-      Number(rows[2].split(":")[0]) * 1000 +
-      (Number(rows[2].split(":")[1]) / 60) * 1000,
-    text: rows[3],
+    who: Number(row[0]),
+    id: Number(row[1]),
+    time: row[2],
+    text: row[3],
   };
-});
+})).flat(2)
 
-profiles = profiles.map((t, i) => {
-  let lastT = profiles.find((p) => p.who === t.who && p.id === t.id - 1);
+
+console.log(groups)
+groups = groups.map((t, i) => {
+  let lastT = groups.find((p) => p.who === t.who && p.id === t.id - 1);
   return {
     ...t,
     msAfterPrevious: t.time - (lastT?.time || 0),
   };
 });
 
-console.log(profiles);
  /* {} */
 document.getElementById("audioelem").onplay = function () {
-  for (let lyric of profiles) {
+  for (let lyric of groups) {
     setTimeout(() => {
       document.getElementById("prsn" + lyric.who).innerText = lyric.text;
     }, lyric.time);
