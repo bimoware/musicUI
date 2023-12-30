@@ -36,7 +36,8 @@ let prsn2 = [
   "10:44|'Cause it's your turn now",
   "14:16|Boy, you're wasting your tongue with lame excuses and lies",
   "18:54|Now, what's on your nasty old mind?",
-].map((e) => `2|${++id}|${e}`);
+]
+prsn2 = prsn2.map((e) => `2|${++id}|${e}`);
 
 let prsn3 = [
   "20:42|So how should I begin this?",
