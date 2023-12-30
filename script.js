@@ -1,4 +1,4 @@
-let id = 0;
+
 
 profiles = profiles.map((t) => {
   let rows = t.split("|");
